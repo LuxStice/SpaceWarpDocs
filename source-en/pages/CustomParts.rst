@@ -92,6 +92,7 @@ then, on your `ModPlugin` class, either :code:`OnPreInitialized()` or :code:`OnI
 See below for an example
 
 .. code::
+
 	using SpaceWarp.API.Parts;
 
 	OnPreInitialized(){
@@ -101,6 +102,7 @@ See below for an example
 Or you can pass a IEnumerable of strings
 
 .. code::
+
 	using SpaceWarp.API.Parts;
 	
 	List<string> myParts = new List<string>(){
@@ -115,7 +117,7 @@ Or you can pass a IEnumerable of strings
 	}
 
 Now, In your mod directory, create a :code:`images` folder inside the :code:`assets` folder, then add your textures as
-:code:`<partName><textureMapType>.png` where :code:`partName` is the name of your part in the JSON and textureMapType is an abbreviation
+:code:`<partName><textureMapType>.png` where :code:`<partName>` is the name of your part in the JSON and :code:`<textureMapType>` is an abbreviation
 of the texture using :code:`_d` for diffuse, :code:`_n` for normal, :code:`_m` for mettalic, :code:`_ao` for ambient occlusion
 :code:`_e` for emission and :code:`_pm` for paint map. All textures must be in .png.
 You only need the diffuse texture and the paint map texture for the color feature to work, but if you have other textures feel free
