@@ -82,6 +82,37 @@ Navigate to your unity project in your file explorer, then go to :code:`Library/
 there should be4 items including  :code:`catalog.json` and :code:`StandaloneWindows64`. Copy everything in this folder 
 to a sub-folder of your mods folder, called :code:`addressables`. This will be loaded automatically by SpaceWarp.
 
+Using the new Colors feature
+----------------------------
+KSP 2 has a new feature, parts now can have different colors! but we can't directly set them in unity since KSP2 uses a
+custom shader. SpaceWarp has an alternative to this.
+
+First, on your part, in the Unity, set all the materials meant to be replaced to `Standard` (Unity built in shader),
+then, on your `ModPlugin` class, either :code:`OnPreInitialized()` or :code:`OnInitialized()` call :code:`Colors.DeclareParts`
+See below for an example
+
+.. code::
+
+	OnPreInitialized(){
+	Colors.DeclareParts(MyPluginInfo.ModGUID, "truss_2v_square_1x1_custom", "truss_2v_square_1x2_custom", "truss_2v_square_1x4_custom");
+	}
+
+Or you can pass a IEnumerable of strings
+
+.. code::
+	
+	List<string> myParts = new List<string>(){
+	"truss_2v_square_1x1_custom",
+	"truss_2v_square_1x2_custom",
+	"truss_2v_square_1x4_custom"
+	};
+	
+	
+	OnPreInitialized(){
+	Colors.DeclareParts(MyPluginInfo.ModGUID, myParts);
+	}
+
+
 Translations
 ------------
 KSP 2 loads all of the text associated with the parts through the localization library, so your part  name, description, 
