@@ -115,7 +115,7 @@ Or you can pass a IEnumerable of strings
 	}
 
 Now, In your mod directory, create a :code:`images` folder inside the :code:`assets` folder, then add your textures as
-:code:`partName_textureMapType.png` where partName is the name of your part in the JSON and textureMapType is an abbreviation
+:code:`<partName><textureMapType>.png` where :code:`partName` is the name of your part in the JSON and textureMapType is an abbreviation
 of the texture using :code:`_d` for diffuse, :code:`_n` for normal, :code:`_m` for mettalic, :code:`_ao` for ambient occlusion
 :code:`_e` for emission and :code:`_pm` for paint map. All textures must be in .png.
 You only need the diffuse texture and the paint map texture for the color feature to work, but if you have other textures feel free
@@ -123,20 +123,26 @@ add them, see below for example
 
 .. code::
 	
-ExampleMod
-|
-\--assets
-   |
-   \--images
-      |
-	  +--truss_2v_square_1x1_custom
-	     |
-		 +--truss_2v_square_1x1_custom_d.png
-		 +--truss_2v_square_1x1_custom_n.png
-		 +--truss_2v_square_1x1_custom_m.png
-		 +--truss_2v_square_1x1_custom_ao.png
-		 +--truss_2v_square_1x1_custom_e.png
-		 +--truss_2v_square_1x1_custom_pm.png
+	ExampleMod
+	|
+	\--assets
+		|
+		\--images
+			|
+			+--truss_2v_square_1x1_custom
+			|	|
+			|	+--truss_2v_square_1x1_custom_d.png
+			|	+--truss_2v_square_1x1_custom_n.png
+			|	+--truss_2v_square_1x1_custom_m.png
+			|	+--truss_2v_square_1x1_custom_ao.png
+			|	+--truss_2v_square_1x1_custom_e.png
+			|	+--truss_2v_square_1x1_custom_pm.png
+			|
+			+--truss_2v_square_1x2_custom
+				|
+				+--truss_2v_square_1x2_custom_d.png
+				+--truss_2v_square_1x2_custom_pm.png
+
 
 If for some reason your part isn't having its colors changed, you can check the logs for more information, all color
 related logs are after :code:`TTR` (short for Taste The Rainbow).
