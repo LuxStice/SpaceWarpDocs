@@ -106,3 +106,8 @@ Without translations, parts will show up as :code:`[TBD]`. So after following th
 3. :code:`Parts/Manufacturer/<part_name>` with the manufacturer for the part
 4. :code:`Parts/Description/<part_name>` with the description of the part
 Example for a custom truss part
+
+Dealing with modules
+--------------------
+KSP2 uses a modules system to define the parts functionality, this can be set up in unity. For this you will need ThunderKit and do the proper setup for KSP2, after that you probably will see all KSP2 stock modules inside when searching for scripts on a GameObject.
+Adding modules is as easy as adding them to your part prefab, after close to no setup is needed, just check the added modules for :code:`Transform` or :code:`GameObject` field that are unset and set them accordingly, all other fields are set from the :code:`.json` so theres no need to match them.
